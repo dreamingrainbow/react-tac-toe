@@ -1,4 +1,10 @@
-# react-tac-toe  Play Online Now  https://codesandbox.io/s/github/dreamingrainbow/react-tac-toe
+# react-tac-toe  Play Online Now https://yjp7w9439x.codesandbox.io/
+
+Checkout the code on codesandbox :
+
+https://codesandbox.io/s/github/dreamingrainbow/react-tac-toe
+
+
 A simple react tic-tac-toe application.
 
 Let's get started created a react tic tac toe applications.
