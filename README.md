@@ -156,7 +156,7 @@ Excellent! Now that everything is cleaned up we can build our board.
       });
     }
 ```
-    Lets knock out our buttons.
+    Lets knock out our buttons and score board.
     
 ```JavaScript
   renderButtons() {
@@ -165,5 +165,127 @@ Excellent! Now that everything is cleaned up we can build our board.
     <button onClick={this.resetGame.bind(this)} key={2}>Reset Game</button>])
   }
 ```
-
+    Score Board
+```JavaScript
+  renderScoreBoard() {
+      return (<span>X : {this.state.score[0]}  |  O : {this.state.score[1]}</span>);     
+  }
 ```
+
+  Last two function are the renderBoard and the togglePiece so lets start with the renderBoard
+  
+  ```JavaScript
+      renderBoard() {
+              let rows = [];
+              for(let i = 0; i < 3; i++ ) { //Row
+                let col =  [];
+                for(let j = 0; j < 3; j++) { //Col
+                  col.push(<span onClick={this.togglePiece.bind(this, i , j)} key={`${i}_${j}`}>
+                    <img src="//placehold.it/72X72?text=?" alt="TicTacToe Options" ref={`img_${i}_${j}`} />
+                  </span>)
+                }
+                rows.push(<Row className="no-gutters justify-content-center" key={i}>{col}</Row>);
+              }
+              return(rows);
+            }
+        ```
+
+          Now that everything is laid out, and most of the functionality is built we only have one last method.
+          The `togglePiece` method will toggle the pieces during game play.
+
+       ```JavaScript
+         togglePiece(x,y) {
+          if(this.state.winner) return null;
+          let board = this.state.board;
+          if(board[x][y] === undefined){
+              board[x][y] = this.state.turn;
+          } else {
+              return null;
+          }
+          switch(`${x}_${y}`) {
+              case '0_1':
+                  this.refs.img_0_1.src = this.state.turn ?"//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";                
+                  break;                
+              case '0_2':
+                  this.refs.img_0_2.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";
+                  break;
+              case '1_0':
+                  this.refs.img_1_0.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";
+                  break;
+              case '1_1':
+                  this.refs.img_1_1.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";;
+                  break;                
+              case '1_2':
+                  this.refs.img_1_2.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";;
+                  break;                
+              case '2_0':
+                  this.refs.img_2_0.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";;
+                  break;
+              case '2_1':
+                  this.refs.img_2_1.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";;
+                  break;                
+              case '2_2':
+                  this.refs.img_2_2.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";
+                  break;
+              case '0_0':
+              default:
+                  this.refs.img_0_0.src = this.state.turn ? "//placehold.it/72X72?text=X" : "//placehold.it/72X72?text=O";
+
+          }
+          let winner = false;
+          let setPieces = [];
+          board.forEach( (row,i) => {
+              let unsetPieces = row.filter(piece => piece === undefined);
+              if(!unsetPieces.length){
+                  setPieces.push(1);
+                  let xWin = row.filter(piece => { return piece === 1 || piece === true ? true : false});
+                  let oWin = row.filter(piece => { return piece === 0 || piece === false ? true : false});
+                  if(xWin.length === 3) {
+                      winner = "X";
+                  }
+                  if(oWin.length === 3) {
+                      winner = "O";
+                  }
+              }
+          });        
+
+
+          if(Number(board[0][0]) === 1 && Number(board[1][1]) === 1 && Number(board[2][2]) === 1) {
+              winner = 'X'
+          } else if(Number(board[0][0]) === 0 && Number(board[1][1]) === 0 && Number(board[2][2]) === 0 ) {
+              winner = 'O'
+          } else if(Number(board[0][2]) === 1 && Number(board[1][1]) === 1 && Number(board[2][0]) === 1 ) {
+              winner = 'X'
+          } else if(Number(board[0][2]) === 0 && Number(board[1][1]) === 0 && Number(board[2][0]) === 0 ) {
+              winner = 'O'
+          } else if(Number(board[0][0]) === 1 && Number(board[1][0]) === 1 && Number(board[2][0]) === 1 ) {
+              winner = 'X'
+          } else if(Number(board[0][1]) === 1 && Number(board[1][1]) === 1 && Number(board[2][1]) === 1 ) {
+              winner = 'X'
+          } else if(Number(board[0][2]) === 1 && Number(board[1][2]) === 1 && Number(board[2][2]) === 1 ) {
+              winner = 'X'
+          } else if(Number(board[0][0]) === 0 && Number(board[1][0]) === 0 && Number(board[2][0]) === 0 ) {
+              winner = 'O'
+          } else if(Number(board[0][1]) === 0 && Number(board[1][1]) === 0 && Number(board[2][1]) === 0 ) {
+              winner = 'O'
+          } else if(Number(board[0][2]) === 0 && Number(board[1][2]) === 0 && Number(board[2][2]) === 0 ) {
+              winner = 'O'
+          }       
+          let xScore = this.state.score[0];
+          let oScore = this.state.score[1];
+          if(winner){
+              if(winner === 'X') {
+                  xScore++;
+              } else {
+                  oScore++;
+              }
+          }
+          const score = [xScore,oScore];
+          this.setState({board, turn : !this.state.turn , winner, score}); 
+        }
+```
+
+That should complete the React-Tac-Toe game! Ask your friends to play with you anytime!
+ 
+    
+    
