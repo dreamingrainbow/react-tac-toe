@@ -63,6 +63,11 @@ open the index.js file and lets do a little clean up and our bootstrap css.
 
 `import 'bootstrap/dist/js/bootstrap';`
 
+![alt text][index_file_example]
+
+[index_file_example]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/react_tac_toe_index_example.PNG "The final index file"
+
+
 Great next, lets save that and open up our App.js file.
 
 we will start here by cleaning up the unused items.
@@ -71,9 +76,13 @@ we will start here by cleaning up the unused items.
 
 `import './App.css';`
 
- while we are cleaning stuff up lets work on our render method, and clean up what its returning.
+![alt text][app_cleanup]
+
+[app_cleanup]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/app_cleanup_1.PNG "App cleanup part 1"
+
+while we are cleaning stuff up lets work on our render method, and clean up what its returning.
   
- we remove all of the following :
+we remove all of the following :
     
 ```html
       <div className="App">
@@ -87,12 +96,21 @@ we will start here by cleaning up the unused items.
       </div>
 ```
 
+![alt text][app_cleanup_2]
+
+[app_cleanup_2]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/app_cleanup_2.PNG "App cleanup part 2"
+
+
 Excellent! Now that everything is cleaned up we can build our board.
 
 Lets start at the top of the App.js page and add in reactstrap and a few components to make this simple.  We add Container, Row, and Col to help us with our board.
         
 `import { Container, Row, Col } from 'reactstrap';`
-    
+
+![alt text][import_reactstrap]
+
+[import_reactstrap]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/import_reactstrap.PNG "Import reactstrap into our application."
+
 Inside our render we can now add our basic layout and our gameboard.
     
 ```html
@@ -109,8 +127,13 @@ Inside our render we can now add our basic layout and our gameboard.
       </section>
 ```
 
-Now that we have that, we can start creating our method.
-    
+![alt text][app_render]
+
+[app_render]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/app_js_render.PNG "The App.js file"
+
+
+Now that we have that, we can start creating our methods.
+
 We can start with some of the basics like our constructor.
     
 ```JavaScript
@@ -123,7 +146,12 @@ We can start with some of the basics like our constructor.
      }
   }    
 ```
-    
+
+![alt text][app_constructor]
+
+[app_constructor]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/add_constructor.PNG "The constructor method"
+
+
 Here, we have set the state property of the App class to have a few properties of its own. These include an undefined board, the score keeper, and who's turn it is, which is chosen at random.
     
 The board is comprised of three array's that have three pieces in each row. Each of these items are set to `undefined`.
@@ -136,7 +164,12 @@ Next we can create the resetScore method,
       this.resetGame();
     }
 ```
-    In this method we set the state of the score back to 0, and re call the reset game just to make sure all the pieces are reset as well.
+
+![alt text][app_reset_score]
+
+[app_reset_score]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/reset_score.png "method to reset the score"
+
+In this method we set the state of the score back to 0, and re call the reset game just to make sure all the pieces are reset as well.
     
 So now we should create or resetGame method so that when our resetScore method is called it works as well.
     
