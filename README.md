@@ -2,7 +2,7 @@
 A simple react tic-tac-toe application.
 
 Let's get started created a react tic tac toe applications.
-
+[display_image]: https://github.com/dreamingrainbow/react-tac-toe/blob/master/reacttactoe.png "The react-tac-toe gameboard"
 [img src="reacttactoe.png"]
 First, thing we need a precheck of all the prerequisits of building our applications. 
   We need our favorite IDE, I'll be using vscode. 
