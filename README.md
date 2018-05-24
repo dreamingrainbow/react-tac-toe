@@ -22,23 +22,32 @@ First, thing we need a precheck of all the prerequisits of building our applicat
   Great, now that all that is out of the way lets begin by creating our new react app.
   
     We can start by creating a directory in our workspance and opening vscode. For some of you the process may be a little different but the process is generally the same. 
-    
- `create-reate-app react-tac-toe`
-    
 ![alt text][create_react_app]
 
 [create_react_app]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/create_react_tac_toe.png "Create react-tac-toe"
+    
+ `create-reate-app react-tac-toe`
+    
+![alt text][create_react_app_success]
 
+[create_react_app_success]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/add_dependencies_success.png "Create react-tac-toe"
+  
 
+Now, that we have our application base we can add the packages we will need to help us with layout. 
+![alt text][add_dendencies]
 
-
-  Now, that we have our application base we can add the packages we will need to help us with layout. 
+[add_dendencies]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/add_dependencies.png "Add dependencies"
 
 `cd react-tac-toe`
 
 `npm i bootstrap jquery reactstrap `
-    
- lets add our bootstrap to our main file
+
+![alt text][add_dendencies_success]
+
+[add_dendencies_success]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/add_dependencies_success.png "Dependencies added successfully"
+
+
+lets add our bootstrap to our main file
     
 open the index.js file and lets do a little clean up and our bootstrap css.
     
