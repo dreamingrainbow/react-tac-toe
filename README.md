@@ -39,8 +39,6 @@ Now, that we have our application base we can add the packages we will need to h
     `npm i bootstrap jquery reactstrap `
     
  lets add our bootstrap to our main file
- 
-    `cd src`
     
  open the index.js file and lets do a little clean up and our bootstrap css.
     
