@@ -191,7 +191,7 @@ While we are creating our resets lets create a reset board, so we can play multi
 
   Last two function are the renderBoard and the togglePiece so lets start with the renderBoard
   
-  ```JavaScript
+```JavaScript
       renderBoard() {
               let rows = [];
               for(let i = 0; i < 3; i++ ) { //Row
@@ -205,12 +205,12 @@ While we are creating our resets lets create a reset board, so we can play multi
               }
               return(rows);
             }
-        ```
+```
 
-          Now that everything is laid out, and most of the functionality is built we only have one last method.
+Now that everything is laid out, and most of the functionality is built we only have one last method.
           The `togglePiece` method will toggle the pieces during game play.
 
-       ```JavaScript
+```JavaScript
          togglePiece(x,y) {
           if(this.state.winner) return null;
           let board = this.state.board;
