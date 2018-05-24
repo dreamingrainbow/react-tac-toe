@@ -3,6 +3,8 @@ A simple react tic-tac-toe application.
 
 Let's get started created a react tic tac toe applications.
 
+![alt text][logo]
+
 [logo]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/reacttactoe.png "The react-tac-toe gameboard"
 
 
