@@ -24,6 +24,13 @@ First, thing we need a precheck of all the prerequisits of building our applicat
     We can start by creating a directory in our workspance and opening vscode. For some of you the process may be a little different but the process is generally the same. 
     
     `create-reate-app react-tac-toe`
+    
+![alt text][create_react_app]
+
+[create_react_app]:https://github.com/dreamingrainbow/react-tac-toe/blob/master/create_react_tac_toe.png "Create react-tac-toe"
+
+
+
 
 Now, that we have our application base we can add the packages we will need to help us with layout. 
 
