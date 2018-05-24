@@ -3,7 +3,7 @@ A simple react tic-tac-toe application.
 
 Let's get started created a react tic tac toe applications.
 
-
+[img src="reacttactoe.png"]
 First, thing we need a precheck of all the prerequisits of building our applications. 
   We need our favorite IDE, I'll be using vscode. 
   We will need to have git installed and ready to use
